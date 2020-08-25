@@ -1,0 +1,48 @@
+---
+title: "Data Viz Part I"
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(openintro)
+library(ggthemes) #You'll need to install this package using install.packages("ggthemes") in your Console
+```
+
+## Quality Data Visualization
+
+Being able to analyze data is a good quality. Being able to present it in a clear, concise format is even better. In part I of our data viz labs, we will focus expanding the graphs we made in lab 1 to be more clear, concise and have a bit more style. 
+
+First, lets draw our original histogram. 
+
+```{r}
+ggplot(data = gpa_study_hours, 
+       aes(x = gpa))+
+  geom_histogram()
+```
+
+Recall, we did make a few adjustments to this in lab 1; we changed the color of the border of the bars as well as their width. 
+
+```{r}
+ggplot(data = gpa_study_hours, 
+       aes(x = gpa))+
+  geom_histogram(color = "White", binwidth = 0.25)
+```
+It would definitely be helpful to add a title and clean up the labels a bit. Using the 'Help' tab in the Directory pane, look up our dataset, gpa_study_hours, and read the description. We'll use this to write our labels. 
+
+```{r}
+ggplot(data = gpa_study_hours, 
+       aes(x = gpa))+
+  geom_histogram(color = "White", binwidth = 0.25)+
+  labs( #the labs() function allows us to add labels to our graph
+    title = "Distribution of Grade Point Average",
+    subtitle = "For 193 Introductory Statistics Students",
+    x = "GPA",
+    y = "Number of Students",
+    caption = "Source: Private US University, 2012"
+  )
+```
+
