@@ -36,7 +36,7 @@ The pipe-operator, %>% , is a key part of Tidyverse syntax. It tells us to take 
 gpa_study_hours %>% 
   summarize(mean(gpa))
 ```
-This above chunk of code tells us to take the gps_study_hours data set "and then" summarize the data by calculating the mean of the gpa variable. 
+This above chunk of code tells us to take the gpa_study_hours data set "and then" summarize the data by calculating the mean of the gpa variable. 
 
 ##Problem One: 
 Calculate the average number of study hours per week with and without the pipe-operator.

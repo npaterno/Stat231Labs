@@ -46,3 +46,53 @@ ggplot(data = gpa_study_hours,
   )
 ```
 
+For our next step, we'll add a little flair. We'll use some styles or "themes" from the ggthemes package. Use the 'Packages' tab in the Directory pane to look up ggthemes and take a look at some of our options. Note: In part II of the lab we will create more custom styles. You can think of part I (this lab) as using a cookierecipe someone else made. We'll eat the cookie, see if we like it, and change what we don't.
+
+```{r}
+ggplot(data = gpa_study_hours, 
+       aes(x = gpa))+
+  geom_histogram(color = "White", binwidth = 0.25)+
+  labs( #the labs() function allows us to add labels to our graph
+    title = "Distribution of Grade Point Average",
+    subtitle = "For 193 Introductory Statistics Students",
+    x = "GPA",
+    y = "Number of Students",
+    caption = "Source: Private US University, 2012"
+  )+
+  theme_solarized()
+```
+
+I like this theme, but the grey bars seem out of place. I'll change the recipie a bit. 
+
+```{r}
+ggplot(data = gpa_study_hours, 
+       aes(x = gpa))+
+  geom_histogram(fill = "lightgoldenrod2",
+                 color = "White", 
+                 binwidth = 0.25)+
+  labs( #the labs() function allows us to add labels to our graph
+    title = "Distribution of Grade Point Average",
+    subtitle = "For 193 Introductory Statistics Students",
+    x = "GPA",
+    y = "Number of Students",
+    caption = "Source: Private US University, 2012"
+  )+
+  theme_solarized()
+```
+
+That looks much better. To change the color of the bars, I added the "fill = " to the geom_histogram() function. Here is a list of [colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+## Problem One:
+Re-create your histogram from lab 1 using a different color for the bars and a theme from the ggthemes package.
+
+```{r}
+#INSERT YOUR CODE HERE
+```
+
+## Problem Two:
+Re-create one of your boxplots from lab 2 in a similar fashion. 
+
+```{r}
+#INSERT YOUR CODE HERE
+```
+
