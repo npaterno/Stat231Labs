@@ -1,0 +1,95 @@
+---
+title: 'Inferential Statistics: Proportions'
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Making Claims about a Population Based on Sample Data
+
+As we've seen in chapter 6, we can calculate confidence intervals and conduct hypothesis test to make claims about our population but based on our sample. In this lab, we'll build two intervals and conduct two tests for the Presidential Election. 
+
+I'm writing this lab on 8/26/2020 and will use a recent [poll](https://docs.cdn.yougov.com/sqqliantmw/econTabReport.pdf) for my data; Specifically, data collected in question 10 of the poll. 
+
+Question 10 states "If an election for president were going to be held now and the Democratic nominee was Joe Biden and the Republican nominee was Donald Trump, would you vote for..." and the 1254 registered voters who were surveyed were given options of: Joe Biden, Donald Trump, Other, Not sure, I would not vote. 
+
+The results were: 
+
+50% Biden 
+
+41% Trump 
+
+3% Other 
+
+4% Not sure 
+
+2% I would not vote
+
+Now we'll use these to make build one confidence interval and conduct one hypothesis test for each candidate. 
+
+## Analysis
+
+There is a function, prop.test(), that calculated the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We'll use some other functions to calculate these manually. 
+
+Our hypothesis tests will test the alternative hypothesis that the candidate will get the majority (greater than 50%) of the vote.
+
+## Trump
+```{r}
+# H_0: P_Trump = 0.50
+# H_1: P_Trump > 0.50
+p_trump <-  0.41 #From the poll
+
+p_0 <- 0.50 #From our null hypothesis
+
+n <- 1254 #From the poll
+
+z_t <- (p_trump-p_0)/sqrt(p_0*(1-p_0)/n) #calculating the test statistic
+
+pval_t <- pnorm(z_t, lower.tail = FALSE) #calculating the p-value
+pval_t #printing the p-value
+```
+
+Since this p-value is above 0.05 (the standard value for alpha) we fail to reject H_0 and can't support the claim that Trump will get a majority of the votes. How many votes can he expect to get? 
+
+```{r}
+ p_trump +c(-1,1)*1.96*sqrt(p_trump*(1-p_trump)/1254)
+
+```
+Based on this poll, President Trump can expect to earn between 38 and 44 percent of the popular vote. 
+
+## Biden
+
+Now we'll repeat the process for Biden.
+
+```{r}
+# H_0: P_Biden = 0.50
+# H_1: P_Biden > 0.50
+p_biden <-  0.50 #From the poll
+
+z_b <- (p_biden-p_0)/sqrt(p_0*(1-p_0)/n) #calculating the test statistic
+
+pval_b <- pnorm(z_b, lower.tail = FALSE) #calculating the p-value
+pval_b #printing the p-value
+```
+
+Since this p-value is above 0.05 (the standard value for alpha) we fail to reject H_0 and can't support the claim that Biden will get a majority of the votes. How many votes can he expect to get? 
+
+```{r}
+ p_biden +c(-1,1)*1.96*sqrt(p_biden*(1-p_biden)/1254)
+
+```
+Based on this poll, President Trump can expect to earn between 47 and 53 percent of the popular vote. 
+
+## Problem One: 
+Repeat this process for a recent poll. 
+```{r}
+#INSERT YOUR CODE HERE
+```
+
+## Problem Two: 
+How do these results compare to those from the poll I used?
