@@ -108,8 +108,11 @@ ggplot(data = gpa_study_hours,
 ## Problem One: 
 Create a custom version of your histogram from lab 1 OR one of the variables in the diamonds dataset. It should include one (or more): 
 *change to text
+
 *change to panel
+
 *change to plot
+
 *change to histogram/boxplot
 
 ```{r}
