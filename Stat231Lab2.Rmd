@@ -67,7 +67,7 @@ diamonds_summary <- diamonds %>% #This will create a new data set called diamond
 ```
 
 ##Problem Two:
-Calculate the five number summary for the different cuts.
+Calculate the five number summary for price when grouped by the different cuts.
 ```{r}
 #INSERT YOUR CODE HERE
 ```

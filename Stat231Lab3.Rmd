@@ -31,6 +31,7 @@ ggplot(data = gpa_study_hours,
        aes(x = gpa))+
   geom_histogram(color = "White", binwidth = 0.25)
 ```
+
 It would definitely be helpful to add a title and clean up the labels a bit. Using the 'Help' tab in the Directory pane, look up our dataset, gpa_study_hours, and read the description. We'll use this to write our labels. 
 
 ```{r}
