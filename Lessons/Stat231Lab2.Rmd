@@ -11,9 +11,9 @@ library(tidyverse)
 library(openintro)
 ```
 
-For this lab, we will be looking at calculating summary statistics, such as a five-number-summary, as well as box plots.
+For this lab, we will be looking at calculating summary statistics, such as a five number summary, as well as boxplots.
 
-We will be using the diamonds dataset from the openintro package. To view the data either run the code chunk below or type the command into your Console. 
+We will be using the diamonds dataset from the *openintro* package. To view the data either run the code chunk below or type the command into your Console. 
 
 ```{r, eval = FALSE}
 View(diamonds)
@@ -26,16 +26,16 @@ As you can see, this is a large data set with information on 53,940 individual d
 ```{r}
 summary(diamonds$price)
 ```
-The summary() function outputs the five-number-summary, plus the mean, of a numeric variable.
+The *summary()* function outputs the five number summary, plus the mean, of a numeric variable.
 
-Let's see what happens when we use the summary() function on a categorical variable. 
+Let's see what happens when we use the *summary()* function on a categorical variable. 
 
 ```{r}
 summary(diamonds$color)
 ```
-With a categorical variable, summary() outputs a frequency distribution!
+With a categorical variable, *summary()* outputs a frequency distribution!
 
-With such a large data set, it might be useful to have some summary statistics for specific subsets. For example, we might expect diamonds with different clarity to have different prices. The Tidyverse allows us to group our dataset by a specific variable before calculating summary values. For this, we'll use the fivenum() function. For example:
+With such a large data set, it might be useful to have some summary statistics for specific subsets. For example, we might expect diamonds with different clarity to have different prices. The *tidyverse* allows us to group our dataset by a specific variable before calculating summary values. For this, we'll use the *fivenum()* function. For example:
 
 ```{r}
 fivenum(diamonds$price)[1]

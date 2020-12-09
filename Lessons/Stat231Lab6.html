@@ -432,21 +432,21 @@ summary {
 <div id="anova" class="section level2">
 <h2>ANOVA</h2>
 <p>For this lab, we will be peaking at section 7.5 (without worry about all the formulas). The analysis of variance - anova - test is equivalent to the chi-squared test but for numeric data instead of categorical data; It will compare the means of three or more samples.</p>
-<p>We will be going back to the diamonds data set and running an anova test to see if there is a difference in the average price of diamonds based on clarity. We will nest the test inside a summary() function to get the test and print out of results in one line.</p>
+<p>We will be going back to the diamonds data set and running an anova test to see if there is a difference in the average price of diamonds based on clarity. We will nest the test inside a <em>summary()</em> function to get the test and print out of results in one line.</p>
 <pre class="r"><code>summary(aov(price ~ clarity, data = diamonds))</code></pre>
 <pre><code>##                Df    Sum Sq   Mean Sq F value Pr(&gt;F)    
 ## clarity         7 2.331e+10 3.330e+09     215 &lt;2e-16 ***
 ## Residuals   53932 8.352e+11 1.549e+07                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The important parts of this print out are the F value and Pr(&gt;F). The F value is similar to a z or t score. The Pr(&gt;F) is a p-value.</p>
-<p>Using the p-value method, &lt;2e-16 means the p-value is less than 0.0000000000000002. Using any of the typical values for alpha, we would reject our null hypothesis and can say there is a difference in the average price of diamonds based on their clarity rating.</p>
+<p>The important parts of this print out are the <span class="math inline">\(F\)</span> value and <span class="math inline">\(Pr(&gt;F)\)</span>. The <span class="math inline">\(F\)</span> value is similar to a <span class="math inline">\(z\)</span> or <span class="math inline">\(t\)</span> score. The <span class="math inline">\(Pr(&gt;F)\)</span> is a p-value.</p>
+<p>Using the p-value method, <span class="math inline">\(&lt;2e-16\)</span> means the p-value is less than <span class="math inline">\(0.0000000000000002\)</span>. Using any of the typical values for alpha, we would reject our null hypothesis and can say there is a difference in the average price of diamonds based on their clarity rating.</p>
 <p>Using the classic method, we need to calculate a critical F value.</p>
 <pre class="r"><code>qf(0.95, #1-alpha
    df1 = 7,
    df2 = 53932)</code></pre>
 <pre><code>## [1] 2.00976</code></pre>
-<p>This means our critical region starts at approximately F = 2, and our test statistic is F = 215. We are well into the critical region and again conclude that there is a difference in the average price of diamonds based on their clarity.</p>
+<p>This means our critical region starts at approximately <span class="math inline">\(F = 2\)</span>, and our test statistic is <span class="math inline">\(F = 215\)</span>. We are well into the critical region and again conclude that there is a difference in the average price of diamonds based on their clarity.</p>
 </div>
 
 

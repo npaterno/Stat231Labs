@@ -18,7 +18,7 @@ For this lab we will be trying to predict the difference between the starting pr
 glimpse(mariokart)
 ```
 
-We want to predict the difference of the start and final price of the game itself. Looking at the pricing variables given we have startPr (starting price), shipPr (shipping price) and totalPr (total price). This means we need to do a bit of work to get the variable we want. Below I'll clean the data - to get rid of unnecessary variables - and add the new variable. 
+We want to predict the difference of the start and final price of the game itself. Looking at the pricing variables given we have *start_Pr* (starting price), *ship_Pr* (shipping price) and *total_Pr* (total price). This means we need to do a bit of work to get the variable we want. Below I'll clean the data - to get rid of unnecessary variables - and add the new variable. 
 
 ```{r}
 model_data <- mariokart %>% 
@@ -28,7 +28,7 @@ model_data <- mariokart %>%
 
 ## Finding the Correlation Coefficient
 
-Next, we'll use a function from the moderndive package to calculate a few linear correlation coefficients and see if there are any relationships worth modeling. 
+Next, we'll use a function from the *moderndive* package to calculate a few linear correlation coefficients and see if there are any relationships worth modeling. 
 
 ```{r}
 get_correlation(data = model_data, price_diff ~ duration)
@@ -38,7 +38,7 @@ get_correlation(data = model_data, price_diff ~ n_bids)
 
 ## Looking for a Better Fit
 
-Based on the correlation values, it would be a better choice to make our prediction based on the number of bids than the duration of the auction. While the correlation value is not spectacular, it is close enough to 1 based on the sample of 143 auctions. Before we build our model let's sketch a scatterplot. 
+Based on the correlation values, it would be a better choice to make our prediction based on the number of bids than the duration of the auction. While the correlation value is not spectacular, it is close enough to 1 based on the sample of 143 auctions. Before we build our model let's sketch a scatter plot. 
 
 ```{r}
 ggplot(model_data, aes(n_bids, price_diff))+
@@ -61,7 +61,7 @@ This is a much better correlation. We'll use this dataset to build our model.
 price_model <- lm(data = model_data_2, price_diff ~ n_bids)
 ```
 
-Next we'll overlay the model onto our scatterplot. 
+Next we'll overlay the model onto our scatter plot. 
 
 ```{r}
 ggplot(model_data_2, aes(n_bids, price_diff))+
@@ -78,9 +78,9 @@ Now we'll look at a summary of the model.
 get_regression_table(price_model)
 ```
 
-The 'intercept' row is for the y-intercept of the line. Based on our data, the model shows an intercept of 12.702 and a standard error of 2.725; This leads to a confidence interval of (7.315, 18.090). For this row we aren't concerned about the (test) statistic or p_value. 
+The *intercept* row is for the y-intercept of the line. Based on our data, the model shows an intercept of 12.702 and a standard error of 2.725; This leads to a confidence interval of (7.315, 18.090). For this row we aren't concerned about the (test) statistic or p_value. 
 
-The 'nBids' row is for the slope of the line. Based on our data, the model shows a slope of 1.737 (meaning the price difference goes up $1.74 per bid) and a standard error of .186; This leads to a confidence interval of (1.370, 2.104). For this row, we are concerned with the (test) statistic and p_value. The null hypothesis would be that the variables are not correlated and the slope is 0. With a test statistic of 4.662 and p_value (close to) 0, we can definitely reject the null hypothesis and support the claim that there is a relationship between these variables with a nonzero slope.
+The *nBids* row is for the slope of the line. Based on our data, the model shows a slope of 1.737 (meaning the price difference goes up $1.74 per bid) and a standard error of .186; This leads to a confidence interval of (1.370, 2.104). For this row, we are concerned with the (test) statistic and p_value. The null hypothesis would be that the variables are not correlated and the slope is 0. With a test statistic of 4.662 and p_value (close to) 0, we can definitely reject the null hypothesis and support the claim that there is a relationship between these variables with a nonzero slope.
 
 ## Making Predictions
 

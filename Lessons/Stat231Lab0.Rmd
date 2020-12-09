@@ -14,15 +14,18 @@ This lab will introduce you to the R programming language, RStudio and RMarkdown
 
 Let's dig in to RStudio! When you open the program you should see a screen similar to this:
 ![RStudio main interface.](images/RStudio_main.png)
+
 Initially, this window is actually a white background. As you may have noticed, your eyes can get tired after staring at a bright screen for hours. To try and lessen eye fatigue, a lot of people who write code like to use some type of dark mode. You can change the mode of your interface by going to 'Tools', 'Global Options...' and 'Appearance'.
 
 The interface, by default, has four panes. Let's go through those one by one starting top left. 
 
-Top left is the Source pane. This pane appears hidden at first glance since we don't have any files open. This is where we'll do a lot of our typing. Just below 'File' there is a small white rectangle with a green plus sign. That will allow us to start a new document. Common file types are R Script (.R) and R Markdown (.Rmd). For our assignments, we will be using R Markdown files. In fact, this document was generated using R Markdown file! The benefit to using these is that it allows us to have plain text, like what you're reading, as well as code and code output. We'll get to this more specifically towards the end of the lab. 
+Top left is the Source pane. This pane may appear to be hidden at first glance if we don't have any files open. If this is the case, near the top left there is a small white rectangle with a green plus sign. That will allow us to start a new document. Common file types are R Script (.R) and R Markdown (.Rmd). Chosing one of those will generate a new file and make the Source pane visible. For our assignments, we will be using script files to test code and R Markdown files for the final submission. 
+
+R Markdown files are great for generating reports. This document was generated using R Markdown file! The benefit to using these is that it allows us to have plain text, like what you're reading, as well as code and code output. We'll get to this more specifically towards the end of the lab.  
 
 The bottom left pane is the Console. We can type code directly into this and it will run. This is useful for troubleshooting or running small segments of code that are not needed for a document. One example of this is installing packages which we will do now. 
 
-Type the following into your Console and press enter.
+Type the following into your Console and press *enter*.
 
 ```{r, eval = FALSE}
 install.packages("openintro")
@@ -42,15 +45,13 @@ We can also use the Console like a giant overpowered calculator.
 1+2
 ```
 
-Next, we'll work on the bottom right pane. This is our directory, or where RStudio looks for and saves files. Let's get this set up for our class. In your Documents folder, create a new folder called "Stat231Labs". Next, go to WAMAP and download the Stat231Lab0.Rmd and Stat231Lab1.Rmd files (from Module 1) into that folder. You will need to do the same for subsequent labs.
-
-Now we'll go back into RStudio and navigate to the Stat231Labs folder. By default, the directory should show your Documents folder. Click the Stat231Labs folder. Next, click the gear icon and select "Set As Working Directory". Now we're set for labs!
+Next, we'll work on the bottom right pane. This is our directory, or where RStudio looks for and saves files. We'll discuss this more below in the *Starting Lab Days* section.
 
 This pane will also show us graphs from code run in a script file or in the Console. There is also a Help tab for when we get stuck and need to look up a function. 
 
-The last pane, top right, is the Environment pane. It keeps track of any variables or datasets we have loaded into the interface. 
+The last pane, top right, is the Environment pane. It keeps track of any user defined variables or datasets we have loaded into the system memory.
 
-We can adjust the size of these panes as needed by hovering between them and dragging the boundary. Personally, I prefer for my Source and Console panes to be wider. It makes it easier to have large amounts of code on screen - to reduce scrolling - and I can always use the Zoom feature to see a larger version of any plots.
+We can adjust the size of these panes as needed by hovering between them and dragging the boundary. Personally, I prefer for my Source pane wide and Console pane switched with my Environment pane. To rearrange your panes, go to 'Tools', 'Global Options...' and 'Pane Layout'.
 
 ## R Markdown
 
@@ -66,10 +67,16 @@ Each code chunk starts with ```{r} and is concluded with three more tick marks. 
 
 Line 12 starts with a double hashtag. This will create a subtitle for a particular section. Anything that we want to see as regular text is typed as you would in any word processor. If you want to include a hyperlink that will open a specific webpage, you type the text you want in the document between square bracket [] followed by the web address in parenthesis (). Images can be included using the code on line 17. In order for this code to function properly, you need to create an 'images' folder inside your lab folder and store the image you want to display in that folder. 
 
-Another useful tool is the ability to display code without running it, begin the chunk with ```{r, eval = FALSE}. This tells the compiler to not run the code, only display it. See line 28 or 35 of the document.
+Another useful tool is the ability to display code without running it, begin the chunk with ```{r, eval = FALSE}. This tells the compiler to not run the code, only display it. See line 31, 39 or 45 of the document.
+
+There are keyboard shortcuts in the *RStudio Cheatsheet* pdf file for inserting things like code chunks, pipe-operators and assignment operators - more on the latter two in our first official lab
+
 ![Rmarkdown Anatomy II.](images/RMarkdown_mid.png)
-For a code chunk to run without any options other than those specified in the setup you would want to follow the example that starts on line 42. 
 
 Once you've completed any text and code chunks necessary for the assignment, click the 'Knit' button at the top of the Source pane. This will compile your .Rmd file into an HTML document. This is the file you need to submit for credit. 
- 
- You are now ready to tackle your first R lab! Open the Stat231Lab1.rmd file from your Directory pane and get started!
+
+## Starting Lab Days 
+
+You should have the "Labs" folder downloaded and saved to your desktop. Open this folder and click the "Stat231Labs.Rproj" file. Once RStudio launches, click the file name in the *Files* tab on the bottom right quarter of your screen. 
+
+Now on the right side of the menu bar you should see "Stat231Labs" next to a box with an *R* in it. For each lab, you should start by opening the project first and then the lab file(s). Now we're ready to get started with our first official (graded) lab!

@@ -431,7 +431,7 @@ summary {
 <div id="making-claims-about-a-population-based-on-sample-data" class="section level2">
 <h2>Making Claims about a Population Based on Sample Data</h2>
 <p>As we’ve seen in chapter 6, we can calculate confidence intervals and conduct hypothesis test to make claims about proportions in our population but based on our sample. As you will see in chapter 7, we can also do this for averages. In this lab, we’ll build an interval and conduct a hypothesis test for a single sample proportion and as well as a two-sample average (section 7.3).</p>
-<p>We’ll be using the <em>piracy</em> data set included in the <em>Data</em> subfolder of our <em>Labs</em> folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation.</p>
+<p>We’ll be using the <em>piracy</em> data set included in the <em>Data</em> sub-folder of our <em>Stat231Labs</em> folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation.</p>
 </div>
 <div id="proportions" class="section level2">
 <h2>Proportions</h2>
@@ -460,7 +460,7 @@ dem_count &lt;- prop_data %&gt;%
             total = n(),
             democrats_prop = democrats/total,
             other_prop = other/total)</code></pre>
-<p>There is a function, prop.test(), that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We’ll use some other functions to calculate these manually.</p>
+<p>There is a function, <em>prop.test()</em>, that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We’ll use some other functions to calculate these manually.</p>
 <p><span class="math inline">\(H_0: p = 0.50\)</span></p>
 <p><span class="math inline">\(H_1: p &gt; 0.50\)</span></p>
 <p><span class="math inline">\(\alpha = 0.05 \rightarrow Z* = 1.645\)</span></p>

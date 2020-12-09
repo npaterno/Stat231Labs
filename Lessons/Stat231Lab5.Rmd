@@ -16,7 +16,7 @@ library(infer)
 
 As we've seen in chapter 6, we can calculate confidence intervals and conduct hypothesis test to make claims about proportions in our population but based on our sample. As you will see in chapter 7, we can also do this for averages. In this lab, we'll build an interval and conduct a hypothesis test for a single sample proportion and as well as a two-sample average (section 7.3). 
 
-We'll be using the *piracy* data set included in the *Data* subfolder of our *Labs* folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
+We'll be using the *piracy* data set included in the *Data* sub-folder of our *Stat231Labs* folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
 
 ## Proportions
 
@@ -38,7 +38,7 @@ dem_count <- prop_data %>%
             other_prop = other/total)
 ```
 
-There is a function, prop.test(), that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We'll use some other functions to calculate these manually. 
+There is a function, *prop.test()*, that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We'll use some other functions to calculate these manually. 
 
 $H_0: p = 0.50$
 

@@ -31,7 +31,7 @@ ggplot(data = gpa_study_hours,
   geom_histogram(color = "White", binwidth = 0.25)
 ```
 
-It would definitely be helpful to add a title and clean up the labels a bit. Using the 'Help' tab in the Directory pane, look up our dataset, gpa_study_hours, and read the description. We'll use this to write our labels. 
+It would definitely be helpful to add a title and clean up the labels a bit. Using the 'Help' tab in the Directory pane, look up our dataset, *gpa_study_hours*, and read the description. We'll use this to write our labels. 
 
 ```{r}
 ggplot(data = gpa_study_hours, 
@@ -46,7 +46,7 @@ ggplot(data = gpa_study_hours,
   )
 ```
 
-For our next step, we'll add a little flair. We'll use some styles or "themes" from the ggthemes package. Use the 'Packages' tab in the Directory pane to look up ggthemes and take a look at some of our options. Note: In part II of the lab we will create more custom styles. You can think of part I (this lab) as using a cookierecipe someone else made. We'll eat the cookie, see if we like it, and change what we don't.
+For our next step, we'll add a little flair. We'll use some styles or "themes" from the *ggthemes* package. Use the 'Packages' tab in the Directory pane to look up *ggthemes* and take a look at some of our options. Note: In part II of the lab we will create more custom styles. You can think of part I (this lab) as using a cookie recipe someone else made. We'll eat the cookie, see if we like it, and change what we don't.
 
 ```{r}
 ggplot(data = gpa_study_hours, 
@@ -62,7 +62,7 @@ ggplot(data = gpa_study_hours,
   theme_solarized()
 ```
 
-I like this theme, but the grey bars seem out of place. I'll change the recipie a bit. 
+I like this theme, but the gray bars seem out of place. I'll change the recipe a bit. 
 
 ```{r}
 ggplot(data = gpa_study_hours, 
@@ -80,4 +80,4 @@ ggplot(data = gpa_study_hours,
   theme_solarized()
 ```
 
-That looks much better. To change the color of the bars, I added the "fill = " to the geom_histogram() function. Here is a list of [colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+That looks much better. To change the color of the bars, I added the *fill* argument to the geom_histogram() function. Here is a list of [colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).

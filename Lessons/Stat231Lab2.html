@@ -429,8 +429,8 @@ summary {
 </div>
 
 
-<p>For this lab, we will be looking at calculating summary statistics, such as a five-number-summary, as well as box plots.</p>
-<p>We will be using the diamonds dataset from the openintro package. To view the data either run the code chunk below or type the command into your Console.</p>
+<p>For this lab, we will be looking at calculating summary statistics, such as a five number summary, as well as boxplots.</p>
+<p>We will be using the diamonds dataset from the <em>openintro</em> package. To view the data either run the code chunk below or type the command into your Console.</p>
 <pre class="r"><code>View(diamonds)</code></pre>
 <div id="five-number-summary" class="section level2">
 <h2>Five Number Summary</h2>
@@ -438,13 +438,13 @@ summary {
 <pre class="r"><code>summary(diamonds$price)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##     326     950    2401    3933    5324   18823</code></pre>
-<p>The summary() function outputs the five-number-summary, plus the mean, of a numeric variable.</p>
-<p>Let’s see what happens when we use the summary() function on a categorical variable.</p>
+<p>The <em>summary()</em> function outputs the five number summary, plus the mean, of a numeric variable.</p>
+<p>Let’s see what happens when we use the <em>summary()</em> function on a categorical variable.</p>
 <pre class="r"><code>summary(diamonds$color)</code></pre>
 <pre><code>##     D     E     F     G     H     I     J 
 ##  6775  9797  9542 11292  8304  5422  2808</code></pre>
-<p>With a categorical variable, summary() outputs a frequency distribution!</p>
-<p>With such a large data set, it might be useful to have some summary statistics for specific subsets. For example, we might expect diamonds with different clarity to have different prices. The Tidyverse allows us to group our dataset by a specific variable before calculating summary values. For this, we’ll use the fivenum() function. For example:</p>
+<p>With a categorical variable, <em>summary()</em> outputs a frequency distribution!</p>
+<p>With such a large data set, it might be useful to have some summary statistics for specific subsets. For example, we might expect diamonds with different clarity to have different prices. The <em>tidyverse</em> allows us to group our dataset by a specific variable before calculating summary values. For this, we’ll use the <em>fivenum()</em> function. For example:</p>
 <pre class="r"><code>fivenum(diamonds$price)[1]</code></pre>
 <pre><code>## [1] 326</code></pre>
 <p>Will give the minimum value (1st number of the summary) of the variable.</p>
