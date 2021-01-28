@@ -1,7 +1,8 @@
 # Fall/Spring Semester Labs
 Set of R labs for Stat 231
 
-BEFORE our first lab day, you will need to download and install R and RStudio. Links are below. If you have a Chromebook please let me know asap as you will be unable to download these.
+For our first lab day, you will need to download and install R and RStudio. Links are below. If you have a Chromebook please let me know asap as you will be unable to download these.
+If you have trouble doing so, we will spend some time at the start of our first lab making sure everyone is able to get the software working. 
 
 R -
 Windows: https://cran.r-project.org/bin/windows/
